@@ -1,7 +1,6 @@
 // 12191706 ±èÁ¤Áø
 // Chapter 9 - 9.14
 // HugeInteger Class definition.
-
 #pragma once
 #include <string>
 
@@ -13,26 +12,26 @@
 class HugeInteger {
 
 public:
-	HugeInteger();
+	HugeInteger(); // constructor
 
-	void input(int num[40]);
-	void const output();
-	
-	HugeInteger add(const HugeInteger&);
-	HugeInteger subtract(const HugeInteger&);
+	void input(int num[40]); // input function
+	void const output(); // output function
 
-	bool isEqualTo(const HugeInteger&);
-	bool isNotEqualTo(const HugeInteger&);
-	bool isGreaterThan(const HugeInteger&);
-	bool isLessThan(const HugeInteger&);
-	bool isGreaterThanOrEqualTo(const HugeInteger&);
-	bool isLessThanOrEqualTo(const HugeInteger&);
+	HugeInteger add(const HugeInteger&); // add function
+	HugeInteger subtract(const HugeInteger&); // subtract function
 
-	bool isZero();
+	bool isEqualTo(const HugeInteger&); // isEqualTo function
+	bool isNotEqualTo(const HugeInteger&); // isNotEqualTo function
+	bool isGreaterThan(const HugeInteger&); // isGreaterThan function
+	bool isLessThan(const HugeInteger&); // isLessThan function
+	bool isGreaterThanOrEqualTo(const HugeInteger&); // isGreaterThanOrEqualTo function
+	bool isLessThanOrEqualTo(const HugeInteger&); // isLessThanOrEqualTo function
 
-	~HugeInteger();
+	bool isZero(); // isZero function
+
+	~HugeInteger(); // destructor
 private:
-	int number[40];
+	int number[40]; // 40-element array of digits to store integers as large as 40 digits each.
 };
 
 #endif
