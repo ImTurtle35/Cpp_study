@@ -6,17 +6,16 @@
 #include <iostream>
 using namespace std;
 
-std::string Card::faces[13] = { "Ace", "Deuce", "Three", "Four", "Five", "Six", "Seven",
+// (c) initialize static arrays of strings representing the faces and suits
+std::string Card::s_face[] = { "Ace", "Deuce", "Three", "Four", "Five", "Six", "Seven",
 "Eight", "Nine", "Ten", "Jack", "Queen", "King" };
-std::string Card::suits[4] = { "Hearts", "Diamonds", "Clubs", "Spades" };
-// provide a constructor that enables objects of this class to be initialized when they are created.
+std::string Card::s_suit[] = { "Hearts", "Diamonds", "Clubs", "Spades" };
 
-Card::Card() {
-	
-}
+// (b) provide a constructor that enables objects of this class to be initialized when they are created.
+Card::Card(){}
+Card::Card(Faces f, Suits s) : face(f), suit(s) {}
 
-// return a string representation of a Card in the form face of suit.
-string Card::toString(int a, int b) const {
-	ostringstream output;
-	output << faces[a] + " of " + suits[b] << endl;
+// (d) return a string representation of a Card in the form face of suit.
+string Card::toString(){
+	return s_face[static_cast<int>(face)-1] + " of " + s_suit[static_cast<int>(suit)-1] + " ";
 }
