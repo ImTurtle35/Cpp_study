@@ -68,3 +68,30 @@ void MotorVehicle::displayCarDetails() {
 		<< "\ncolor : " << getColor()
 		<< "\nengineCapacity : " << getEngineCapacity() << endl << endl;
 }
+
+bool MotorVehicle::operator==(const MotorVehicle& right) const {
+	if (make != right.make || fuelType != right.fuelType || yearOfManufacture != right.yearOfManufacture || color != right.color || engineCapacity != right.engineCapacity) {
+		return false;
+	}
+	return true;
+}
+
+bool MotorVehicle::operator!=(const MotorVehicle& right) const {
+	return !(*this == right);
+}
+
+bool MotorVehicle::operator>(const MotorVehicle& right) const {
+	if (yearOfManufacture > right.yearOfManufacture) {
+		return true;
+	}
+	return false;
+}
+
+ostream& operator<<(ostream& output, const MotorVehicle& obj) {
+	output << "\nmake : " << obj.getMake()
+		<< "\nfuelType : " << obj.getFuelType()
+		<< "\nyearOfManufacture : " << obj.getYearOfManufacture()
+		<< "\ncolor : " << obj.getColor()
+		<< "\nengineCapacity : " << obj.getEngineCapacity() << endl << endl;
+	return output;
+}
