@@ -2,6 +2,7 @@
 // Chpater 10 - 10.8
 // MotorVehicle class definition.
 #pragma once
+#include <iostream>
 #include <string>
 
 // prevent multiple inclusions of header
@@ -9,6 +10,8 @@
 #define MOTORVEHICLE_H
 
 class MotorVehicle {
+	friend std::ostream& operator<<(std::ostream&, const MotorVehicle&); // overloaded output operator
+
 public:
 	explicit MotorVehicle(std::string ,int ,int); // constructor with three data member
 
@@ -28,6 +31,11 @@ public:
 	int getEngineCapacity() const; // get engineCapacity function
 
 	void displayCarDetails(); // display data members function
+
+	bool operator==(const MotorVehicle&) const; // equaility operator
+	bool operator!=(const MotorVehicle&) const; // inequaility operator
+
+	bool operator>(const MotorVehicle&) const; // greater than operator
 
 private:
 	std::string make;
