@@ -81,7 +81,7 @@ bool MotorVehicle::operator!=(const MotorVehicle& right) const {
 }
 
 bool MotorVehicle::operator>(const MotorVehicle& right) const {
-	if (yearOfManufacture > right.yearOfManufacture) {
+	if (yearOfManufacture < right.yearOfManufacture) {
 		return true;
 	}
 	return false;
