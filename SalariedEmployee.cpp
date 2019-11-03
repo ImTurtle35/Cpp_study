@@ -8,33 +8,26 @@ using namespace std;
 
 // constructor 
 SalariedEmployee::SalariedEmployee(const string& first,
-	const string& last, const string& ssn, Date& birthdate, double salary)
-	: Employee(first, last, ssn, birthdate) {
-	setMonthlySalary(salary);
+	const string& last, const string& ssn, double salary)
+	: Employee(first, last, ssn) {
+	setWeeklySalary(salary);
 }
 
 // set salary
-void SalariedEmployee::setMonthlySalary(double salary) {
+void SalariedEmployee::setWeeklySalary(double salary) {
 	if (salary < 0.0) {
 		throw invalid_argument("Weekly salaray must be >= 0.0");
 	}
 
-	monthlySalary = salary;
+	weeklySalary = salary;
 }
 
 // return salary
-double SalariedEmployee::getMonthlySalary() const { return monthlySalary; }
+double SalariedEmployee::getWeeklySalary() const { return weeklySalary; }
 
 // calculate earnings;
 // override pure virtual earnings in Employee
-double SalariedEmployee::earnings() const { 
-	if (birthDate.getMonth() == 11) {
-		return getMonthlySalary() + 100;
-	}
-	else {
-		return getMonthlySalary();
-	}
-}
+double SalariedEmployee::earnings() const {	return getWeeklySalary();}
 
 // return a string representation of SalariedEmployee's information
 string SalariedEmployee::toString() const {
@@ -42,6 +35,6 @@ string SalariedEmployee::toString() const {
 	output << fixed << setprecision(2);
 	output << "salaried employee: "
 		<< Employee::toString() // reuse abstract base-class function
-		<< "\nmonthly salary: " << getMonthlySalary();
+		<< "\nweekly salary: " << getWeeklySalary();
 	return output.str();
 }
