@@ -7,8 +7,8 @@ using namespace std;
 
 // constructor
 Employee::Employee(const string& first, const string& last,
-	const string& ssn, Date& birthdate)
-	: firstName(first), lastName(last), socialSecurityNumber(ssn), birthDate(birthdate) {}
+	const string& ssn)
+	: firstName(first), lastName(last), socialSecurityNumber(ssn) {}
 
 // set first name
 void Employee::setFirstName(const string& first) { firstName = first; }
@@ -28,8 +28,8 @@ void Employee::setSocialSecurityNumber(const string& ssn) {
 }
 
 // return social security number
-string Employee::getSocialSecurityNumber() const { 
-	return socialSecurityNumber; 
+string Employee::getSocialSecurityNumber() const {
+	return socialSecurityNumber;
 }
 
 // toString Employee's information (virtual, but not pure virutal)

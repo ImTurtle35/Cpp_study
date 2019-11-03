@@ -5,11 +5,10 @@
 #define EMPLOYEE_H
 
 #include <string> // C++ standard string class
-#include "Date.h" // Date class definition
 
 class Employee {
 public:
-	Employee(const std::string&, const std::string&, const std::string&, Date&);
+	Employee(const std::string&, const std::string&, const std::string&);
 	virtual ~Employee() = default; // compiler generates virtual destructor
 
 	void setFirstName(const std::string&); // set first name
@@ -24,9 +23,6 @@ public:
 	// pure Virtual function makes Employee an abstract base class
 	virtual double earnings() const = 0; // pure virtual
 	virtual std::string toString() const; // virtual
-
-protected:
-	Date& birthDate;
 
 private:
 	std::string firstName;
