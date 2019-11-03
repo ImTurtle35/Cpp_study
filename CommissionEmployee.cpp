@@ -8,8 +8,8 @@ using namespace std;
 
 // constructor
 CommissionEmployee::CommissionEmployee(const string& first,
-	const string& last, const string& ssn, Date& birthdate, double sales, double rate)
-	: Employee(first, last, ssn, birthdate) {
+	const string& last, const string& ssn, double sales, double rate)
+	: Employee(first, last, ssn) {
 	setGrossSales(sales);
 	setCommissionRate(rate);
 }
@@ -42,11 +42,7 @@ double CommissionEmployee::getCommissionRate() const {
 
 // calculate earnings; override pure virtual function earnings in Employee
 double CommissionEmployee::earnings() const {
-	if (birthDate.getMonth() == 11) {
-		return getCommissionRate() * getGrossSales() + 100;
-	}
-	else
-		return getCommissionRate() * getGrossSales();
+	return getCommissionRate() * getGrossSales();
 }
 
 // return a string representation of CommissionEmployee's information

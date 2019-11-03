@@ -10,7 +10,7 @@
 class CommissionEmployee : public Employee {
 public:
 	CommissionEmployee(const std::string&, const std::string&,
-		const std::string&, Date&, double = 0.0, double = 0.0);
+		const std::string&, double = 0.0, double = 0.0);
 	virtual ~CommissionEmployee() = default; // virtual destructor
 
 	void setCommissionRate(double); // set commission rate
