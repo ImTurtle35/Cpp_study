@@ -9,8 +9,8 @@ using namespace std;
 // constructor
 BasePlusCommissionEmployee::BasePlusCommissionEmployee(
 	const string& first, const string& last, const string& ssn,
-	Date& birthdate, double sales, double rate, double salary)
-	: CommissionEmployee(first, last, ssn, birthdate, sales, rate) {
+	 double sales, double rate, double salary)
+	: CommissionEmployee(first, last, ssn, sales, rate) {
 	setBaseSalary(salary); // validate and store base salary
 }
 

@@ -10,7 +10,7 @@
 class BasePlusCommissionEmployee : public CommissionEmployee {
 public:
 	BasePlusCommissionEmployee(const std::string&, const std::string&,
-		const std::string&, Date&, double = 0.0, double = 0.0, double = 0.0);
+		const std::string&, double = 0.0, double = 0.0, double = 0.0);
 	virtual ~BasePlusCommissionEmployee() = default; // virtual destructor
 
 	void setBaseSalary(double); // set base salary
